@@ -1,0 +1,24 @@
+<view class="search">
+  <input placeholder='搜索'/>
+</view>
+
+<view class="container">
+  <navigator url="/pages/detail/detail?id={{item.id}}" class="item" wx:for="{{itemList}}" wx:key="id">
+    <view class="img">
+      <image src="{{item.images[0]}}"/>
+    </view>
+    <view class="content">
+      <view class="title">{{item.name}}</view>
+      <view class="address">{{item.address}}</view>
+      <view class="time">{{item.businessHours}}</view>
+    </view>
+    <view class="score">{{item.score}}</view>
+  </navigator>
+</view>
+
+<view class="load-more" wx:if="{{flag}}">
+  加载更多...
+</view>
+<view class="load-more" wx:else>
+  你好，没有更多内容了...
+</view>

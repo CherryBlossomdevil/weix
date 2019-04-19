@@ -1,0 +1,20 @@
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+  <swiper-item wx:for="{{headerList}}" wx:key="id">
+    <navigator url="{{item.link}}" wx:if="{{item.link}}">
+      <image src="{{item.image}}" mode="aspectFill"/>
+    </navigator>  
+    <image wx:else src="{{item.image}}" mode="aspectFill"/>
+  </swiper-item>
+</swiper>
+
+<view class="container">
+  <navigator url="/pages/list/list?cat={{item.id}}" class="item" wx:for="{{itemList}}" wx:key="id">
+     <image src="{{item.icon}}"/>
+     <view class="text">{{item.name}}</view>
+  </navigator>
+</view>
+
+<view class="link">
+  <image src="../../assets/link-01.png" />
+  <image src="../../assets/link-02.png" />
+</view>
